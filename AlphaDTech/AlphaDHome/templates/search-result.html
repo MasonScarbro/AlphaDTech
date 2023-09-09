@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3Dmol.js Viewer</title>
+    <!-- Include 3Dmol.js and 3Dmol.ui.js libraries -->
+    <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+    <script src="https://3Dmol.org/build/3Dmol.ui-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <img src="/AlphaDTech/static/AlphaDHome/images/alphad-logo.png" />
+    <div id="container-01" class="mol-container"></div>
+    <script>
+      let element = document.querySelector("#container-01");
+      let config = { backgroundColor: "orange" };
+      let viewer1 = $3Dmol.createViewer(element, config);
+      let pdbUri =
+        "https://alphafold.ebi.ac.uk/files/AF-P68871-F1-model_v4.pdb";
+      jQuery.ajax(pdbUri, {
+        success: function (data) {
+          let v1 = viewer1;
+          v1.addModel(data, "pdb"); /* load data */
+          v1.setStyle(
+            {},
+            { cartoon: { color: "spectrum" } }
+          ); /* style all atoms */
+          v1.zoomTo(); /* set camera */
+          v1.render(); /* render scene */
+          v1.zoom(1.2, 1000); /* slight zoom */
+        },
+        error: function (hdr, status, err) {
+          console.error("Failed to load PDB " + pdbUri + ": " + err);
+        },
+      });
+    </script>
+    <div id="container-02" class="mol-container"></div>
+    <script>
+      element = document.querySelector("#container-02");
+      config = { backgroundColor: "orange" };
+      viewer2 = $3Dmol.createViewer(element, config);
+      pdbUri = "https://alphafold.ebi.ac.uk/files/AF-P69905-F1-model_v4.cif";
+      jQuery.ajax(pdbUri, {
+        success: function (data) {
+          v2 = viewer2;
+          v2.addModel(data, "cif"); /* load data */
+          v2.setStyle(
+            {},
+            { cartoon: { color: "spectrum" } }
+          ); /* style all atoms */
+          v2.zoomTo(); /* set camera */
+          v2.render(); /* render scene */
+          v2.zoom(1.2, 1000); /* slight zoom */
+        },
+        error: function (hdr, status, err) {
+          console.error("Failed to load PDB " + pdbUri + ": " + err);
+        },
+      });
+    </script>
+    <style>
+      .mol-container {
+        width: 40%;
+        height: 1000px;
+        position: relative;
+      }
+    </style>
+  </body>
+</html>
