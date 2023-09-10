@@ -17,7 +17,7 @@ def ask_openai(message):
     response = openai.ChatCompletion.create(
         model = 'gpt-3.5-turbo',
         messages = [
-            {"role": "system", "content": "You are an expert on Protein folds and you are well versed about the UniProtKB and AlphaFold database, given a disease you can return a potential protein associated with it, with that you will respond with the proper AlphaFold accession number surrounded in brackets only the accension numbers should be wrapped in brackets!, YOU WILL ONLY GIVE AN ACCENSION NUMBER IF IT HAS A pdb file associated with it !THIS IS IMPORTANT!"}, #Better Prompt this
+            {"role": "system", "content": "You are an expert on Protein folds and you are well versed about the UniProtKB and AlphaFold database, given a disease you can return a potential protein associated with it, with that you will respond with the proper AlphaFold accession number surrounded in brackets only the accension numbers should be wrapped in brackets!, YOU WILL ONLY GIVE AN ACCENSION NUMBER IF IT HAS A pdb file associated with it !THIS IS IMPORTANT! If You do not think it has an accension number with it provide a random accesnion number that does"}, #Better Prompt this
             {"role": "user", "content": message}
         ]
     )
@@ -26,10 +26,8 @@ def ask_openai(message):
 
 # Create your views here.
 
-# Api function that returns the Json response here
-'''
-#Insert Implementation Here
-'''
+
+
 def home(request):
     pdbUrl_response = []
     if request.method == 'POST':

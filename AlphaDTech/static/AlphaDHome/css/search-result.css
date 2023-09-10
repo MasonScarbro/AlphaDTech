@@ -1,7 +1,7 @@
 /* Regular (400) */
 @font-face {
   font-family: "Inter";
-  src: url("/AlphaDTech/static/AlphaDHome/fonts/Inter-Regular.ttf")
+  src: url("static/AlphaDHome/fonts/Inter-Regular.ttf")
     format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -10,7 +10,7 @@
 /* Medium (500) */
 @font-face {
   font-family: "Inter";
-  src: url("/AlphaDTech/static/AlphaDHome/fonts/Inter-Medium.ttf")
+  src: url("static/AlphaDHome/fonts/Inter-Medium.ttf")
     format("truetype");
   font-weight: 500;
   font-style: normal;
@@ -19,7 +19,7 @@
 /* Light (300) */
 @font-face {
   font-family: "Inter";
-  src: url("/AlphaDTech/static/AlphaDHome/fonts/Inter-Light.ttf")
+  src: url("static/AlphaDHome/fonts/Inter-Light.ttf")
     format("truetype");
   font-weight: 300;
   font-style: normal;
@@ -28,7 +28,7 @@
 /* Bold (700) */
 @font-face {
   font-family: "Inter";
-  src: url("/AlphaDTech/static/AlphaDHome/fonts/Inter-Bold.ttf")
+  src: url("static/AlphaDHome/fonts/Inter-Bold.ttf")
     format("truetype");
   font-weight: 700;
   font-style: normal;
@@ -37,7 +37,7 @@
 /* Semi-Bold (600) */
 @font-face {
   font-family: "Inter";
-  src: url("/AlphaDTech/static/AlphaDHome/fonts/Inter-SemiBold.ttf")
+  src: url("static/AlphaDHome/fonts/Inter-SemiBold.ttf")
     format("truetype");
   font-weight: 600;
   font-style: normal;
