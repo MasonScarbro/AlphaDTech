@@ -2,6 +2,8 @@ from django.http import JsonResponse
 from django.shortcuts import render
 import openai
 from decouple import config
+import requests
+import re
 
 openai_api_key = config('OPENAI_API_KEY')
 openai.api_key = openai_api_key
@@ -15,7 +17,7 @@ def ask_openai(message):
     response = openai.ChatCompletion.create(
         model = 'gpt-3.5-turbo',
         messages = [
-            {"role": "system", "content": "You are a Helpful Assistant and Tutor"}, #Better Prompt this
+            {"role": "system", "content": "You are an expert on Protein folds and you are well versed about the UniProtKB and AlphaFold database, given a disease you can return a potential protein associated with it, with that you will respond with the proper AlphaFold accession number surrounded in brackets only the accension numbers should be wrapped in brackets!, YOU WILL ONLY GIVE AN ACCENSION NUMBER IF IT HAS A pdb file associated with it !THIS IS IMPORTANT!"}, #Better Prompt this
             {"role": "user", "content": message}
         ]
     )
@@ -29,18 +31,14 @@ def ask_openai(message):
 #Insert Implementation Here
 '''
 def home(request):
+    pdbUrl_response = []
     if request.method == 'POST':
         message = request.POST.get('message')
         response = ask_openai(message) #makes response the chatGPT response
         
         global response_string 
-        response_string = response
+        pdbUrl_response = re.findall(r'\[(.*?)\]', response);
         #Regex this based on prompt to only be the UkprotKit orr wtvr
 
-        return JsonResponse(
-            {
-            'message': message, 
-            'response': response,
-            #'AlphaResponse': AlphaResponse, 
-            })
+        return JsonResponse({'message': message, 'response': response, 'pdbUrl_response': pdbUrl_response})
     return render(request, 'home.html')

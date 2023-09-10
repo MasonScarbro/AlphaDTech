@@ -4,6 +4,7 @@
 <link href="/static/AlphaDHome/css/exam.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <form class="message-form">
     {% csrf_token %}
     <div class="input-group">
@@ -13,6 +14,9 @@
       </div>
     </div>
   </form>
+
+  <!-- Display data from the API -->
+
 <script>
     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     const messageForm = document.querySelector('.message-form');
@@ -39,7 +43,36 @@
     .then(data => {
         const response = data.response;
         console.log(response);
+        const pdbUrl_response = data.pdbUrl_response;
+        let success = false
+        for (var i = 0; i < pdbUrl_response.length && !success; i++){
+            const pdbUrlResponse = data.pdbUrl_response[i];
+            const apiUrl = `https://alphafold.com/api/prediction/${pdbUrlResponse}?key=AIzaSyCeurAJz7ZGjPQUtEaerUkBZ3TaBkXrY94`
+            fetchD(apiUrl)
+                .then(result => {
+                    if (result.status >= 200 && result.status <= 299) {
+                    success = true; // Set the success flag to true
+                    // Handle the successful response here
+                    }
+                })
+                .catch(error => {
+                console.error(`Error fetching data for ${pdbUrlResponse}: ${error}`);
+                // Handle the error as needed
+                });
+        }
+         // Assuming it's the first element
+        
+
+        
     });
 });
+
+    async function fetchD(url) {
+        const data = await fetch(url);
+        const result = await data.json();
+        console.log(result[0].pdbUrl);
+        return result[0].pdbUrl;
+    }
+    fetchD('https://alphafold.com/api/prediction/Q9BUP3?key=AIzaSyCeurAJz7ZGjPQUtEaerUkBZ3TaBkXrY94');
 </script>
 {% endblock %}
