@@ -86,80 +86,18 @@
                         <img src="static/AlphaDHome/images/vertical-dots.svg" height="20px"/>
                     </div>
                     <h3>Hemoglobin subunit epsilon</h3>
-                    <img class="cif" src="static/AlphaDHome/images/cif-1.jpg"/>
+                    <div id="viewer-container-1" class="mol-container" style="aspect-ratio: 1;"></div>
                 </div>
                 <div class="small-container">
-                    <div class="top">
-                        <div class="icon-uniprot">
-                            <img src="static/AlphaDHome/images/stack-icon.svg" width="30px"/>
-                            <div class="uniprot-info">
-                                <div class="uniprot">UniProtKB ID</div>
-                                <div class="uniprot-id">P69905</div>
-                            </div>
-                        </div>
-                        <img src="static/AlphaDHome/images/vertical-dots.svg" height="20px"/>
-                    </div>
-                    <h3>Hemoglobin subunit epsilon</h3>
-                    <img class="cif" src="static/AlphaDHome/images/cif-1.jpg"/>
-                </div>
-                <div class="small-container">
-                    <div class="top">
-                        <div class="icon-uniprot">
-                            <img src="static/AlphaDHome/images/stack-icon.svg" width="30px"/>
-                            <div class="uniprot-info">
-                                <div class="uniprot">UniProtKB ID</div>
-                                <div class="uniprot-id">P69905</div>
-                            </div>
-                        </div>
-                        <img src="static/AlphaDHome/images/vertical-dots.svg" height="20px"/>
-                    </div>
-                    <h3>Hemoglobin subunit epsilon</h3>
-                    <img class="cif" src="static/AlphaDHome/images/cif-1.jpg"/>
-                </div>
-            </div>
-            <div class="medium-container">
-                <div class="small-container">
-                    <div class="top">
-                        <div class="icon-uniprot">
-                            <img src="static/AlphaDHome/images/stack-icon.svg" width="30px"/>
-                            <div class="uniprot-info">
-                                <div class="uniprot">UniProtKB ID</div>
-                                <div class="uniprot-id">P69905</div>
-                            </div>
-                        </div>
-                        <img src="static/AlphaDHome/images/vertical-dots.svg" height="20px"/>
-                    </div>
-                    <h3>Hemoglobin subunit epsilon</h3>
-                    <img class="cif" src="static/AlphaDHome/images/cif-1.jpg"/>
-                </div>
-                <div class="small-container">
-                    <div class="top">
-                        <div class="icon-uniprot">
-                            <img src="static/AlphaDHome/images/stack-icon.svg" width="30px"/>
-                            <div class="uniprot-info">
-                                <div class="uniprot">UniProtKB ID</div>
-                                <div class="uniprot-id">P69905</div>
-                            </div>
-                        </div>
-                        <img src="static/AlphaDHome/images/vertical-dots.svg" height="20px"/>
-                    </div>
-                    <h3>Hemoglobin subunit epsilon</h3>
-                    <img class="cif" src="static/AlphaDHome/images/cif-1.jpg"/>
-                </div>
-                <div class="small-container">
-                    <div class="top">
-                        <div class="icon-uniprot">
-                            <img src="static/AlphaDHome/images/stack-icon.svg" width="30px"/>
-                            <div class="uniprot-info">
-                                <div class="uniprot">UniProtKB ID</div>
-                                <div class="uniprot-id">P69905</div>
-                            </div>
-                        </div>
-                        <img src="static/AlphaDHome/images/vertical-dots.svg" height="20px"/>
-                    </div>
-                    <h3>Hemoglobin subunit epsilon</h3>
-                    <div id="viewer-container-1" class="mol-container" style="width: 300px; height: 300px;"></div>
-                </div>
+                  <div class="top">
+                      <div class="icon-uniprot">
+                          <p>Sequence:</p>
+                      </div>
+                      <img src="static/AlphaDHome/images/vertical-dots.svg" height="20px"/>
+                  </div>
+                  
+                  
+              </div>
             </div>
         </div>
       </div>
@@ -172,14 +110,13 @@
     
       // Create a 3Dmol.js viewer
       let viewer1 = $3Dmol.createViewer(container1, {
-        backgroundColor: "white", // Set the background color
-        width: 300, // Set the width of the viewer
-        height: 300, // Set the height of the viewer
+        backgroundColor: "white",
+        width: "100%", // Set the width to be 100% of the container
+        height: "100%",
   });
     
       // URL of the PDB file
-      let pdbUri = 
-    
+      let pdbUri = 'https://alphafold.ebi.ac.uk/files/AF-Q9BUP3-F1-model_v4.pdb';    
       // Fetch the PDB file from the URL
       jQuery.ajax(pdbUri, {
         success: function (data) {

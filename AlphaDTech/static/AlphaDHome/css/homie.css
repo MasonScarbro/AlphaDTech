@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:400,700');
+
+
+.input-wrapper {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.message-form {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+#showSearchButton {
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+input[type="text"] {
+  position: absolute;
+  width: 250px;
+  height: 50px;
+  border-radius: 26px;
+  border: 1px solid white;
+  background: transparent;
+  font-size: 15px;
+  padding-left: 50px;
+  z-index: 5;
+  color: #ABABAB;
+}

@@ -7,6 +7,7 @@
   font-style: normal;
 }
 
+
 /* Medium (500) */
 @font-face {
   font-family: "Inter";
@@ -15,6 +16,7 @@
   font-weight: 500;
   font-style: normal;
 }
+
 
 /* Light (300) */
 @font-face {
@@ -25,6 +27,7 @@
   font-style: normal;
 }
 
+
 /* Bold (700) */
 @font-face {
   font-family: "Inter";
@@ -33,6 +36,7 @@
   font-weight: 700;
   font-style: normal;
 }
+
 
 /* Semi-Bold (600) */
 @font-face {
@@ -43,9 +47,11 @@
   font-style: normal;
 }
 
+
 body {
   background-color: #0d0d0d;
 }
+
 
 .logo {
   position: absolute;
@@ -54,12 +60,14 @@ body {
   width: 200px;
 }
 
+
 .background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
 }
+
 
 .hero {
   position: absolute;
@@ -72,6 +80,7 @@ body {
   line-height: 100%; /* 83px */
 }
 
+
 .hero .description {
   font-family: "Inter";
   font-weight: 400;
@@ -79,6 +88,7 @@ body {
   letter-spacing: 6.365px;
   text-align: center;
 }
+
 
 .hero .query {
   color: #e6e6e6;
@@ -88,6 +98,7 @@ body {
   font-weight: 700;
   letter-spacing: -1.66px;
 }
+
 
 .info {
   position: absolute;
@@ -99,12 +110,14 @@ body {
   gap: 100px;
 }
 
+
 .overview {
   display: flex;
   flex-direction: column;
   gap: 70px;
   align-items: center;
 }
+
 
 h2 {
   color: #e6e6e6;
@@ -118,6 +131,7 @@ h2 {
   text-align: center;
 }
 
+
 p {
   color: #ababab;
   font-family: Inter;
@@ -129,6 +143,7 @@ p {
   margin-left: 50px;
 }
 
+
 .proteins {
   display: flex;
   flex-direction: column;
@@ -136,23 +151,26 @@ p {
   align-items: center;
 }
 
+
 .proteins .large-container {
   display: inline-flex;
-  padding: 46px 46px 61px 45px;
-  flex-direction: column;
+  padding: 40px 45px;
   align-items: flex-start;
-  gap: 15px;
+  gap: 16px;
   border-radius: 20px;
   border: 1px solid #1f1f1f;
   background: #1a1a1a;
   margin-bottom: 100px;
 }
 
+
 .proteins .medium-container {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 17px;
+  gap: 16px;
 }
+
 
 .proteins .small-container {
   display: flex;
@@ -164,8 +182,23 @@ p {
   border-radius: 20px;
   border: 1px solid #2b2b2b;
   background: #262626;
-  max-width: 231px;
+  width: 231px;
 }
+
+
+.proteins .micro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 10px 15px 10px 15px;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #3b3b3b;
+  background: #333;
+}
+
 
 .proteins .top {
   display: flex;
@@ -174,17 +207,20 @@ p {
   align-items: center;
 }
 
+
 .proteins .icon-uniprot {
   display: flex;
   align-items: center;
   gap: 9px;
 }
 
+
 .proteins .uniprot-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
+
 
 .proteins .description {
   font-family: "Inter";
@@ -193,6 +229,7 @@ p {
   letter-spacing: 6.365px;
   text-align: center;
 }
+
 
 .proteins .uniprot {
   color: #b3b3b3;
@@ -204,6 +241,7 @@ p {
   letter-spacing: 0.1px;
 }
 
+
 .proteins .uniprot-id {
   color: #fff;
   font-family: Inter;
@@ -214,27 +252,49 @@ p {
   letter-spacing: 0.1px;
 }
 
+
+.proteins p {
+  font-size: 12px;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+}
+
+
 h3 {
   color: #fff;
   font-family: Inter;
   font-size: 20px;
   line-height: 20px;
   margin: 0;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.2px;
+  width: 100%;
+  text-align: left;
 }
+
+
+.h3-desc-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
 
 .cif {
   width: 100%;
   border-radius: 10px;
 }
 
+
 .mol-container {
-  width: 40%;
-  height: 1000px;
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
   position: relative;
 }
