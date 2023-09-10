@@ -8,10 +8,15 @@
     <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
     <script src="https://3Dmol.org/build/3Dmol.ui-min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/AlphaDTech/static/AlphaDHome/css/search-result.css">
   </head>
   <body>
-    <img src="/AlphaDTech/static/AlphaDHome/images/alphad-logo.png" />
-    <div id="container-01" class="mol-container"></div>
+    <img src="/AlphaDTech/static/AlphaDHome/images/alphad-logo.png" class="logo"/>
+    <div>
+        
+    </div>
+    <!-- <div id="container-01" class="mol-container"></div> -->
+    <!-- <div id="container-02" class="mol-container"></div> -->
     <script>
       let element = document.querySelector("#container-01");
       let config = { backgroundColor: "orange" };
@@ -35,7 +40,6 @@
         },
       });
     </script>
-    <div id="container-02" class="mol-container"></div>
     <script>
       element = document.querySelector("#container-02");
       config = { backgroundColor: "orange" };
@@ -58,12 +62,5 @@
         },
       });
     </script>
-    <style>
-      .mol-container {
-        width: 40%;
-        height: 1000px;
-        position: relative;
-      }
-    </style>
   </body>
 </html>
