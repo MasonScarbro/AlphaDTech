@@ -4,60 +4,42 @@
 <link href="/static/AlphaDHome/css/exam.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script defer src="{% static 'AlphaDHome/js/exam.js' %}" data-num="{{ num }}"></script>
-<div class="box">
-    <div>commit confirming I recieved project! - Steve/bonjourchez</div>
-<h5 class="radiohead">
-    Transport
-    Motorways and tramlines
-    Starting and then stopping
-    Taking off and landing
-    <br></br>
-    The emptiest of feelings
-    Disappointed people
-    Clinging onto bottles
-    And when it comes it's so so disappointing
-    <br></br>
-    Let down and hanging around
-    Crushed like a bug in the ground
-    Let down and hanging around
-    <br></br>
-    Shell smashed, juices flowing
-    Wings twitch legs are going
-    Don't get sentimental
-    It always ends up drivel
-    <br></br>
-    One day I am gonna grow wings
-    A chemical reaction
-    Hysterical and useless
-    Hysterical and
-    <br></br>
-    Let down and hanging around
-    Crushed like a bug in the ground
-    Let down and hanging around
-    <br></br>
-    Let down and hanging
-    Let down
-    Let down
-    <br></br>
-    You know, you know where you are with
-    You know where you are with
-    Floor collapsing, floating
-    Bouncing back and
-    <br></br>
-    One day I am gonna grow wings
-    A chemical reaction
-    (You know where you are)
-    Hysterical and useless
-    (You know where you are)
-    Hysterical and
-    (You know where you are)
-    Let down and hanging around
-    Crushed like a bug in the ground
-    Let down and hanging around</h5>
-    <h6 class="radiohead">Let Down - RadioHead</h6>
-    
-</div>
-<button id="buttonEx">ADD 1</button>
-<h1 id="numValue">{{ num }}</h1>
+<form class="message-form">
+    {% csrf_token %}
+    <div class="input-group">
+      <input type="text" class="form-control message-input" placeholder="Type your message...">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary btn-send">Send</button>
+      </div>
+    </div>
+  </form>
+<script>
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const messageForm = document.querySelector('.message-form');
+    const messageInput = document.querySelector('.message-input');
+    messageForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const message = messageInput.value.trim()
+        console.log('Message:', message)
+        if (message.length === 0) {
+            return;
+        }
+    fetch('', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded',
+        'X-CSRFToken': csrftoken
+        },
+        body: new URLSearchParams({
+            'csrfmiddlewaretoken': csrftoken,
+            'message': message
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const response = data.response;
+        console.log(response);
+    });
+});
+</script>
 {% endblock %}

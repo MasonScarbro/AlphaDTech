@@ -16,12 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from AlphaDHome.views import home, update_num 
+from AlphaDHome.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('update-num', update_num, name='update-num'),
     path('AlphaDHome/', include('AlphaDHome.urls')),
     path('AlphaDHome/', include('django.contrib.auth.urls')),
 
