@@ -1,44 +1,26 @@
 # AlphaDTech
 Medihacks prj
 
-<h3>For the frontend guys:</h3>
-<h6>(assuming youve never used Django)<h6>
-<p>You really dont need to focus on anything but the /static folders there you can see the css, js, and images for the frontend 
-    The html will be in the templates folder you can create subfolders in that for better organization<p>
-    <br></br>
-    <h6>You may notice that the html files have these lines:</h6>
-    
-```html
-{% block content %}
-{% load static %}
-{% csrf_token %}
+https://github.com/MasonScarbro/AlphaDTechnologies/assets/120221711/2888569d-8074-404f-8957-706c21b472c9
+<h4>This is a mediHacks project built in 3 days! built using Django, and HTML/CSS/JS</h6>
+<br></br>
+<h5>Inspiration</h5>
+<p>The inspiration of this project was based upon the AlphaFold API which one of our team members discovered a few months back. While in anatomy class learning about proteins, to maximize efficiency and have correct protein structures, one of our members found AlphaFold to make protein structure models. Coming into the project, with the knowledge of the AlphaFold API, they figured it would be perfect to incorporate into a project for this health based hackathon.</p>
 
-{% endblock %}
-```
-<p>as you probably geussed these are needed</p>
+<h5>What it does</h5>
+<p>Our web application is a tool that combines medical research with AI technology. It interacts with users easily and prompts them to enter disease names. AlphaD provides an array of protein data through its seamless connection with the AlphaFold API. This information is a vital tool for observant researchers, acting as an indicator in the huge ocean of biological knowledge. Our application enables researchers to speed up the essential task of identifying crucial proteins, therefore expanding the boundaries of medical knowledge and research. It does this by providing quick and informative access to protein information for multiple disorders.</p>
 
+<h5>How we built it</h5>
+In the development of AlphaD Technologies, we effectively used the powerful Django framework in addition to HTML, CSS, and JavaScript. Additionally, with the inclusion of AlphaFold API, a AI System that predicts a protein's 3D structure, and ChatGPT API, we were able to facilitate the main feature of the website, which was displaying information of given proteins.
 
-```python
-#views.py:
-def home(request):
-    global num #ignore
-    return render(request, 'home.html', {'num': num,})
-```
-```python
-#urls.py:
-from django.contrib import admin
-from django.urls import path
-from .views import home, update_num
-urlpatterns = [
-     path('', home, name='home'),
-     path('update-num', update_num, name='update-num'),
-]
-```
-<p>inside views.py this is how a page is rendered, anytime you create an html file you would need to include this. However in reality I and the other backend guy should be able to that</p>
+<h5>Challenges we ran into</h5>
+<p>In the course of development, our team struggled with the handling of the AlphaFold API. Analyzing their return data, we were clueless when it came to getting the model of the protein through the API. After a bit of research about different file types and urls and how to incorporate them into HTML, our teammates successfully faced our biggest challenge.</p>
 
-<p>Otherwise just make normal static pages and we should be able to integrate it properly. Ignore the num, that was simply used for a demonstration of how one might communicate with the backend</p>
-<h1>INSTALL</h1>
-<h6>When I created the requirments.txt I was not in a venv meaning if you do install that way than you will be installing every package I've ever installed, I think all you should need is Django, and python, which their installs are simple I think<h6>
+<h5>Accomplishments that we're proud of</h5>
+<p>A few of the many accomplishments we are proud of is the effective teamwork that was present through the period of development. Tasks were laid out and completed on time with teammates there to help when we needed. Some other accomplishments includes the finishing of the project within 24 hours of beginning and content of the quality throughout all members.</p>
 
-    
-    
+<h5>What we learned</h5>
+<p>Throughout the few days our team worked with each other, we all learned specific skills. Some of the mentionable skills include new css and html knowledge, the learning of different protein structures, and the use of protein data bank files, And a ton of frontend to backend communication strategies!</p>
+
+Built With
+<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/862990838?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="202309102032"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>   
